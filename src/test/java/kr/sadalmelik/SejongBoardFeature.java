@@ -8,13 +8,20 @@ import kr.sadalmelik.repository.PostRepository;
 import kr.sadalmelik.repository.UserRepository;
 import kr.sadalmelik.service.PostService;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Arrays;
 import java.util.List;
 
 
-//시나리오를 먼저 작성해 봅시다!
+
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(classes = ApplicationTests.class)
+@Transactional
 public class SejongBoardFeature {
 
     @Autowired
@@ -49,11 +56,11 @@ public class SejongBoardFeature {
         postService.find(forum, 2);
 
         // 4. 새 글을 작성합니다.
-        // TODO 익명사용자는 어떻게 할 지에 대해서 정리하기.
         Post post = new Post();
         post.setTitle("title");
         post.setText("테스트 문자열입니다.");
         post.setUser(user);
+        post.setForum(forum);
         post.setTagList(Arrays.asList("tag1", "tag2", "tag3"));
 
         postService.write(post);
@@ -63,7 +70,7 @@ public class SejongBoardFeature {
 
         // 6. 작성된 글을 수정합니다.
         post.setText("내부 문자열은 변경합니다.");
-        postRepository.save(post);
+        postService.modify(post);
 
         // 7. 작성된 글을 삭제합니다.
         postRepository.delete(post);

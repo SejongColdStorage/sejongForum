@@ -33,7 +33,6 @@ public class PostServiceImpl implements PostService {
     @Override
     public void modify(Post post){
         post.setUpdateDate(new Date());
-        postRepository.save(post);
     }
 
     @Override
