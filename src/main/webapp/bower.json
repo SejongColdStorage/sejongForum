@@ -1,0 +1,9 @@
+{
+  "name": "sejong-forum",
+  "version": "0.0.1",
+  "homepage": "https://github.com/SejongStudyRoom/sejongForum",
+  "authors": [
+    "SejongPark <devsejong@gmail.com>"
+  ],
+  "directory": "components/"
+}
