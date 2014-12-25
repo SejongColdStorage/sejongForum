@@ -19,7 +19,8 @@
     - TODO 독립적인 프로젝트로 분리할 것
     - TODO UI빌드도구 사용(node.js)
 - TODO git 제대로 사용하기
-- TODO db 버전관리(flyway)
+- TODO db 버전관리(flyway) 실증해보기.
+- TODO docker 사용 배포 실증해보기.
 
 ## 기능리스트
 
