@@ -1,11 +1,11 @@
 .DS_Store
 
-# 인텔리J설정 파일
+# intelliJ
 **/*.iml
 **/.idea
-# 자바 컴파일 파일들
+# java compiled files
 **/target
 
-#자바스크립트 라이브러리
+# frontend libraries
 src/main/webapp/assets/components
 
