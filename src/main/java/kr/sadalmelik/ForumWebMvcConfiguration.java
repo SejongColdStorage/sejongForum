@@ -26,7 +26,7 @@ public class ForumWebMvcConfiguration extends WebMvcConfigurerAdapter {
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         String[] pathPatterns = new String[]{"/components/**", "/js/**", "/css/**", "/img/**"};
-        String[] locations = new String[]{"assets/components/", "assets/js/", "assets/css", "assets/img/"};
+        String[] locations = new String[]{"assets/components/", "assets/js/", "assets/css/", "assets/img/"};
         int cachePeriod = CACHE_PERIOD;
 
         registry.addResourceHandler(pathPatterns)
