@@ -36,19 +36,13 @@ public class ForumController {
         return "forum/forumList";
     }
 
-    @RequestMapping("/forum/{forumName}")
-    public String post(String forumName) {
-        return null;
-    }
-
 
     private List<ForumView> extendToForumViews(List<Forum> forums){
         List<ForumView> forumViews = new ArrayList<>();
         for(Forum forum : forums){
             ForumView forumView = new ForumView(forum);
-            //최근 게시물
+            // 최근 게시물
             forumView.setRecentPosts(postService.findRecentPosts(forum));
-
             forumViews.add(forumView);
         }
 
@@ -65,6 +59,7 @@ public class ForumController {
             this.setId(forum.getId());
             this.setForumName(forum.getForumName());
             this.setDescription(forum.getDescription());
+            this.setForumKey(forum.getForumKey());
         }
 
         private List<Post> recentPosts;
