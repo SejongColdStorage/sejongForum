@@ -5,8 +5,11 @@ import kr.sadalmelik.domain.Forum;
 import kr.sadalmelik.domain.Post;
 import org.springframework.data.domain.Page;
 
+import java.util.List;
+
 public interface PostService {
     public void write(Post post);
     public void modify(Post post);
     Page<Post> find(Forum forum, int pageNumber);
+    List<Post> findRecentPosts(Forum forum);
 }

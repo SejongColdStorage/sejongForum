@@ -11,6 +11,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * Created by SejongPark on 14. 12. 4..
@@ -41,5 +42,15 @@ public class PostServiceImpl implements PostService {
         PageRequest pageRequest = new PageRequest(pageNumber, 10, sort);
 
         return postRepository.findByForum(forum, pageRequest);
+    }
+
+    @Override
+    public List<Post> findRecentPosts(Forum forum){
+        Sort sort = new Sort(Sort.Direction.DESC, new String[]{"writeDate"});
+        PageRequest pageRequest = new PageRequest(0, 5, sort);
+
+        List<Post> resultPosts = postRepository.findByForum(forum, pageRequest).getContent();
+
+        return resultPosts;
     }
 }
