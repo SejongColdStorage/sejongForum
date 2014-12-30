@@ -10,4 +10,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface PostRepository extends PagingAndSortingRepository<Post, Long> {
     public Page<Post> findByForum(Forum forum, Pageable pageable);
+    public Post findByForumAndPageNumber(Forum forum, Pageable pageable);
 }

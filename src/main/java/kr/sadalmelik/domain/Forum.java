@@ -24,8 +24,9 @@ public class Forum {
     @Column(name="FORUM_NAME")
     private String forumName;
 
+    @Column(name="FORUM_KEY")
+    private String forumKey;
+
     @Column(name="DESCRIPTION")
     private String description;
-
-
 }
